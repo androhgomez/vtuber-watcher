@@ -36,3 +36,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'graphql'
 gem 'graphql-client'
+gem 'bootstrap', '~> 5.1.0'
+gem 'slim'
