@@ -14,3 +14,13 @@
  *= require_self
  */
 @import "bootstrap";
+
+.album-card {
+  text-decoration-line: none;
+  color: var(--bs-body-color);
+}
+
+.album-card:active {
+  text-decoration-line: underline;
+  color: var(--bs-body-color);
+}

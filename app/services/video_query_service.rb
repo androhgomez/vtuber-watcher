@@ -25,7 +25,7 @@ private
   end
 
   def format_results
-    @output = @res.to_h["data"]["videos"]["items"].map(&:symbolize_keys)
+    @output = @res.to_h["data"]["videos"]["items"].map(&:deep_symbolize_keys)
   end
 
   def setup_variables
@@ -46,8 +46,8 @@ private
 
   def get_subscriptions
     [
-      "UCP4nMSTdwU1KqYWu3UH5DHQ",
       "UC6oDys1BGgBsIC3WhG1BovQ",
+      "UCgA2jKRkqpY_8eysPUs8sjw",
     ]
   end
 end
