@@ -1,24 +1,18 @@
-# README
+Alessandro H. Gomez Portfolio project: vtuber-watcher
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Queries a fanmade GraphQL API for video info for a predetermined list of Youtube channels and displays the result
 
-Things you may want to cover:
+Chooks API: https://github.com/Choooks22/vt-api
 
-* Ruby version
 
-* System dependencies
+Things to improve:
 
-* Configuration
+* Runs on development env (figuring out why running it in a Docker container with Unicorn is malfunctioning)
 
-* Database creation
+* Externalize subscriptions to a config yml file
 
-* Database initialization
+* Add the ability to add channels to the query
 
-* How to run the test suite
+* Handle the querying on the controller and render results on async client-side Javascript (no need for refresh)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Result filters and sort
