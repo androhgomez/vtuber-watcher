@@ -45,9 +45,6 @@ private
   end
 
   def get_subscriptions
-    [
-      "UC6oDys1BGgBsIC3WhG1BovQ",
-      "UCgA2jKRkqpY_8eysPUs8sjw",
-    ]
+    I18n.t("video_query_service.subscribed_channels")
   end
 end

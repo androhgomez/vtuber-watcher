@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  video_query_service:
+    subscribed_channels: [
+      "UCRcLAVTbmx2-iNcXSsupdNA",
+      "UCgA2jKRkqpY_8eysPUs8sjw",
+    ]
+

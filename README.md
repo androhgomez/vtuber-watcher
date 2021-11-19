@@ -9,8 +9,6 @@ Things to improve:
 
 * Runs on development env (figuring out why running it in a Docker container with Unicorn is malfunctioning)
 
-* Externalize subscriptions to a config yml file
-
 * Add the ability to add channels to the query
 
 * Handle the querying on the controller and render results on async client-side Javascript (no need for refresh)
