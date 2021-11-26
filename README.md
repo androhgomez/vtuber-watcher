@@ -1,5 +1,7 @@
 Alessandro H. Gomez Portfolio project: vtuber-watcher
 
+See it live here: https://vtuber-watcher.ahgpriv.one/
+
 Queries a fanmade GraphQL API for video info for a predetermined list of Youtube channels and displays the result
 
 Chooks API: https://github.com/Choooks22/vt-api
@@ -7,7 +9,6 @@ Chooks API: https://github.com/Choooks22/vt-api
 
 Things to improve:
 
-* Runs on development env (figuring out why running it in a Docker container with Unicorn is malfunctioning)
 
 * Add the ability to add channels to the query
 
