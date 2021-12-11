@@ -13,10 +13,7 @@ class VideoQueryService < ApplicationService
     setup_variables
     query_api
     format_results
-    return @output
   end
-
-
 
 private
 
@@ -25,7 +22,7 @@ private
   end
 
   def format_results
-    @output = @res.to_h["data"]["videos"]["items"].map(&:deep_symbolize_keys)
+    @res.to_h["data"]["videos"]["items"].map(&:deep_symbolize_keys)
   end
 
   def setup_variables
@@ -36,12 +33,8 @@ private
 
   def setup_channel_ids
     return get_subscriptions unless @channels.present?
-    return @channels.merge(get_subscriptions) unless @exclude_subscriptions
+    return @channels.push(*get_subscriptions) unless @exclude_subscriptions
     return @channels
-  end
-
-  def channels_specified?
-    @channels.present?
   end
 
   def get_subscriptions

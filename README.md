@@ -15,3 +15,5 @@ Things to improve:
 * Handle the querying on the controller and render results on async client-side Javascript (no need for refresh)
 
 * Result filters and sort
+
+* Separate video card view component into its own partial (for DRY and possible reuse)
