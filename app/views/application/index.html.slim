@@ -13,23 +13,23 @@ main
           a href="https://github.com/androhgomez/vtuber-watcher" target="_blank"
             | https://github.com/androhgomez/vtuber-watcher
 
-  .album.py-5.bg-light
-    .container
-      .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
+    = react_component("VideoGallery", {videos: @videos}, prerender: true)
 
-        - @videos.each do |video|
-          a.album-card href="https://www.youtube.com/watch?v=#{video[:_id]}" target="_blank"
-            .col
-              .card.shadow-sm
-                .bd-placeholder-img.card-img-top width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"
-                img aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="https://img.youtube.com/vi/#{video[:_id]}/hqdefault.jpg"
-                .card-body
-                  p.card-text
-                    = video[:title]
-                  .d-flex.justify-content-between.align-items-center
-                    small.text-muted
-                      - if video[:time][:duration].present?
-                        = ActiveSupport::Duration.build((video[:time][:duration] / 1000).seconds).inspect
-                      - elsif video[:time][:scheduled].present?
-                        - scheduled = Time.parse(video[:time][:scheduled])
-                        = "Live on #{scheduled.to_formatted_s(:long)} #{scheduled.zone}"
+    /.album.py-5.bg-light
+      /.container
+        /.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
+          /- @videos.each do |video|
+            /a.album-card href="https://www.youtube.com/watch?v=#{video[:_id]}" target="_blank"
+              /.col
+                /.card.shadow-sm
+                  /img aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" src="https://img.youtube.com/vi/#{video[:_id]}/hqdefault.jpg"
+                  /.card-body
+                    /p.card-text
+                      /= video[:title]
+                    /.d-flex.justify-content-between.align-items-center
+                      /small.text-muted
+                        /- if video[:time][:duration].present?
+                          /= ActiveSupport::Duration.build((video[:time][:duration] / 1000).seconds).inspect
+                        /- elsif video[:time][:scheduled].present?
+                          /- scheduled = Time.parse(video[:time][:scheduled])
+                          /= "Live on #{scheduled.to_formatted_s(:long)} #{scheduled.zone}"

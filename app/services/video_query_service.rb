@@ -6,10 +6,12 @@ class VideoQueryService < ApplicationService
     if params[:channels].present?
       @channels = params[:channels]
       @exclude_subscriptions = params[:exclude_subscriptions] || false
+      @dummy_call = params[:dummy_call] || false
     end
   end
 
   def call
+    return dummy_data if @dummy_call
     setup_variables
     query_api
     format_results
@@ -39,5 +41,9 @@ private
 
   def get_subscriptions
     I18n.t("video_query_service.subscribed_channels")
+  end
+
+  def dummy_data
+    JSON.parse(File.read('./public/dummyapi/result.json'))
   end
 end

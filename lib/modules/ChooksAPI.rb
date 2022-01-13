@@ -2,7 +2,7 @@ require "graphql/client"
 require "graphql/client/http"
 
 module ChooksAPI
-
+  
   HTTP = GraphQL::Client::HTTP.new("https://api.chooks.app/v1") do
 
     def headers(context)
