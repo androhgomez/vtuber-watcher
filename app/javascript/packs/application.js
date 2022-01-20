@@ -7,14 +7,26 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require react
+//= require react-intl
 //= require react_ujs
 //= require components
+//= require react-intl-formatted-duration
+
+
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+// import { FormattedNumber } from 'react-intl';
+// 
 import "channels"
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+import ReactRailsUJS from "react_ujs"
+var componentRequireContext = require.context("./components", true, /^(?!.*__tests__\/.*$).+$/)
+//window.reactRequire = require.context('react-intl-formatted-duration', true)
+ReactRailsUJS.useContext(componentRequireContext)
+window.componentRequireContext = componentRequireContext

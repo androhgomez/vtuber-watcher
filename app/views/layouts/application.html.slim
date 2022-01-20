@@ -10,12 +10,14 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+
 
   body
     header
       .bg-dark.collapse#navbarHeader
         .container
-      .navbar.navbar-dark.bg-dark.shadow-sm
+    .navbar.navbar-dark.bg-dark.shadow-sm
         .container
           a.navbar-brand.d-flex.align-items-center href="#"
             strong
