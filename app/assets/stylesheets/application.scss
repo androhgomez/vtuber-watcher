@@ -24,3 +24,11 @@
   text-decoration-line: underline;
   color: var(--bs-body-color);
 }
+
+.album-card .card-text {
+  min-height: 48px;
+}
+
+.album-card .card-body {
+  min-height: 117px;
+}

@@ -11,11 +11,11 @@ class VideoGallery extends React.Component{
   }
 
   smallText(time){
-    if (typeof time.duration !== 'undefined') {
+    if (typeof time.duration !== 'undefined' && time.duration !== null) {
       return(
         <FormattedDuration seconds={time.duration / 1000} format="{hours} {minutes} {seconds}" />
       )
-    } else if (typeof time.scheduled !== 'undefined') {
+    } else if (typeof time.scheduled !== 'undefined' && time.scheduled !== null) {
       return (
         <FormattedDate value={time.scheduled} />
       )
@@ -24,7 +24,7 @@ class VideoGallery extends React.Component{
 
   videoCard(video) {
     return (
-      <a className="album-card" href={'https://www.youtube.com/watch?v=' + video._id} target="_blank">
+      <a className="album-card" href={'https://www.youtube.com/watch?v=' + video._id} target="_blank" key={video._id}>
         <div className="col">
           <div className="card shadow-sm">
             <img aria-label="Placeholder: Thumbnail" focusable="false" preserveAspectRatio="xMidYMid slice" src={'https://img.youtube.com/vi/' + video._id + '/hqdefault.jpg'}/>
