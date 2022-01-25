@@ -14,6 +14,9 @@ html
 
 
   body
+    .hidden#react_data
+      - @react_data.map do | key, value |      
+        .hidden id=key *{ 'data-value': value }
     header
       .bg-dark.collapse#navbarHeader
         .container

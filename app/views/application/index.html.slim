@@ -3,7 +3,7 @@ main
     .row.py-lg-5
       .col-lg-6.col-md-8.mx-auto
         p
-          | Channel and video data are pulled via GraphQL from Choooks22's vt-api
+          | Channel and video data are a sample output from from Choooks22's vt-api. The API is currently inaccessible until further notice.
           br/
           a href="https://github.com/Choooks22/vt-api" target="_blank"
             | https://github.com/Choooks22/vt-api
@@ -13,7 +13,7 @@ main
           a href="https://github.com/androhgomez/vtuber-watcher" target="_blank"
             | https://github.com/androhgomez/vtuber-watcher
 
-    = react_component("VideoGallery", {videos: @videos}, prerender: false)
+    = react_component("VideoGallery", {}, prerender: false)
 
     /.album.py-5.bg-light
       /.container
