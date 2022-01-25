@@ -4,8 +4,20 @@ import FormattedDuration from 'react-intl-formatted-duration';
 
 class VideoGallery extends React.Component{
 
+  constructor(props){
+    super(props);
+    var data_div = document.querySelector("#react_data")
+    if (typeof props !=='undefined' && typeof props.videos !=='undefined') {
+      this.state = { videos: props.videos };
+    } else if ( typeof dat_div !== null && data_div.querySelectorAll("#videos").length > 0 ) {
+      this.state = { videos: JSON.parse(document.querySelector("#react_data").querySelectorAll("#videos")[0].dataset.value) };
+    } else {
+      // this.state = { videos: query json from api }
+    }
+  }
+
   videoCards(){
-    return this.props.videos.map((video) => 
+    return this.state.videos.map((video) => 
       this.videoCard(video)
     );
   }
